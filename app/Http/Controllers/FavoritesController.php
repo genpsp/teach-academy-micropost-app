@@ -10,9 +10,11 @@ class FavoritesController extends Controller
      * @param  $micropostId
      * @return \Illuminate\Http\Response
      */
-    public function store($micropostId)
+    // public function store(Request $micropostId)
+    public function store(Request $request)
     {
-        \Auth::user()->favorite($micropostId);
+        // \Auth::user()->favorite($micropostId);
+        \Auth::user()->favorite($request->input('id'));
         return back();
     }
 
